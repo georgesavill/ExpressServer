@@ -1,3 +1,4 @@
+#!/usr/bin/env node /** express_server.js */
 const express = require("express");
 const app = express();
 const app_redirect = express();
@@ -12,10 +13,10 @@ https.createServer({
     key: fs.readFileSync("/etc/letsencrypt/live/georgesavill.com/privkey.pem"),
     cert: fs.readFileSync("/etc/letsencrypt/live/georgesavill.com/cert.pem"),
     ca: fs.readFileSync("/etc/letsencrypt/live/georgesavill.com/chain.pem"),
-}, app).listen(443,() => {
+}, app).listen(8443,() => {
     console.log("Server listening on port 443");
 });
 
-http.createServer(app_redirect).listen(80, () => {
+http.createServer(app_redirect).listen(8080, () => {
     console.log("Redirect server listening on port 80");
 });

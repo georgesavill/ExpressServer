@@ -2,9 +2,16 @@
 const express = require("express");
 const app = express();
 const app_redirect = express();
+const RateLimit = require("express-rate-limit");
 const fs = require("fs");
+const helmet = require("helmet");
 const https = require("https");
 const http = require("http");
+
+const limiter = new RateLimit({windowMs: 10*60*1000,max:100,delayMs:0});
+
+app.use(limiter);
+app.use(helmet());
 
 app.get("/", (req, res) => res.send("<h1>GEORGE SAVILL!</h1>"));
 app_redirect.all("/*", (req, res) => res.redirect("https://" + req.headers.host + req.url));

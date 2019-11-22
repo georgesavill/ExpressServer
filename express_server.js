@@ -7,13 +7,18 @@ const fs = require("fs");
 const helmet = require("helmet");
 const https = require("https");
 const http = require("http");
+const path = require("path");
 
 const limiter = new RateLimit({windowMs: 10*60*1000,max:100,delayMs:0});
 
 app.use(limiter);
 app.use(helmet());
 
-app.get("/", (req, res) => res.send("<h1>GEORGE SAVILL!</h1>"));
+app.use(express.static(path.join(__dirname,"/../georgesavill.com/www/")));
+
+app.get("/", (req, res) => res.send(
+    res.sendFile(__dirname, "/index.html")
+));
 app_redirect.all("/*", (req, res) => res.redirect("https://" + req.headers.host + req.url));
 
 https.createServer({

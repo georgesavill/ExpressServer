@@ -8,7 +8,7 @@ const path = require("path")
 
 app.set("trust proxy", 1)
 
-const limiter = new RateLimit({windowMs: 10*60*1000,max:100,delayMs:0})
+const limiter = new RateLimit({windowMs: 10*60*1000,max:100})
 
 app.use(limiter);
 app.use(helmet());

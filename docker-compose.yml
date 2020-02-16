@@ -1,0 +1,15 @@
+---
+version: "2"
+services:
+  express-server:
+    image: express-server
+    container_name: express-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - ../portfolio-website/www:/www
+    ports:
+      - 8081:8081
+    restart: unless-stopped

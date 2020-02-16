@@ -6,6 +6,8 @@ const helmet = require("helmet")
 const http = require("http")
 const path = require("path")
 
+app.set("trust proxy", 1)
+
 const limiter = new RateLimit({windowMs: 10*60*1000,max:100,delayMs:0})
 
 app.use(limiter);

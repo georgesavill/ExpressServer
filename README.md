@@ -1,4 +1,4 @@
-# ExpressServer
+# express-server
 
 Simple nodeJS Express.js server for use with the portfolio-website repo (and a reverse proxy to handle HTTPS)
 

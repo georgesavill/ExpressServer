@@ -1,8 +1,8 @@
 # ExpressServer
 
-Simple nodeJS Express.js server for the static serving of assets for georgesavill.com
+Simple nodeJS Express.js server for use with the portfolio-website repo (and a reverse proxy to handle HTTPS)
 
 Includes support for:
-* Rate limiting
-* HTTP -> HTTPS redirect
-* HTTPS encryption
+* Serving of static assets from /../portfolio-website/www/
+* express-rate-limit npm package - basic rate limiting for express
+* helmet npm package - to set HTTP headers appropriately for improved security

@@ -11,10 +11,10 @@ const limiter = new RateLimit({windowMs: 10*60*1000,max:100,delayMs:0});
 app.use(limiter);
 app.use(helmet());
 
-app.use(express.static(path.join(__dirname,"/../portfolio-website/www/")));
+app.use(express.static(path.join("/www/")));
 
 app.get("/", (req, res) => res.send(
-    res.sendFile(__dirname, "/index.html")
+    res.sendFile("/www/index.html")
 ));
 
 http.createServer(app).listen(8081, () => {

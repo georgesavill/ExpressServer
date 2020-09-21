@@ -1,17 +1,8 @@
 #!/usr/bin/env node /** express_server.js */
 const express = require("express")
 const app = express()
-const RateLimit = require("express-rate-limit")
-const helmet = require("helmet")
 const http = require("http")
 const path = require("path")
-
-app.set("trust proxy", 1)
-
-const limiter = new RateLimit({windowMs: 10*60*1000,max:100})
-
-app.use(limiter);
-app.use(helmet());
 
 app.use(express.static(path.join("/www/")))
 

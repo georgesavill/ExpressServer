@@ -1,18 +1,25 @@
 {
-  "name": "express_server",
+  "name": "express-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple nodeJS Express.js server for use with the portfolio-website repo (and a reverse proxy to handle HTTPS)",
   "main": "express_server.js",
-  "scripts": {
-    "start": "node express_server.js"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "express-rate-limit": "^5.0.0",
-    "helmet": "^3.21.2",
-    "path": "^0.12.7",
-    "pm2": "^4.1.2"
-  }
+    "http": "0.0.1-security",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/georgesavill/express-server.git"
+  },
+  "author": "George Savill",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/georgesavill/express-server/issues"
+  },
+  "homepage": "https://github.com/georgesavill/express-server#readme"
 }

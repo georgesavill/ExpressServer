@@ -4,7 +4,7 @@
   "description": "Simple nodeJS Express.js server for use with the portfolio-website repo (and a reverse proxy to handle HTTPS)",
   "main": "express_server.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "http": "0.0.1-security",
     "path": "^0.12.7"
   },
